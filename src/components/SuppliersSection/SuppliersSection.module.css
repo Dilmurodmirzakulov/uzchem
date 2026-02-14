@@ -1,0 +1,323 @@
+.suppliers {
+  background-color: var(--color-white);
+  padding: 140px 0 100px;
+}
+
+.suppliersHeader {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.sectionTitle {
+  color: #000000;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+}
+
+.navigationButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.navButton {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #9fa6ac;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  padding: 0;
+  width: 50px;
+}
+
+.navButton:focus-visible,
+.plusButton:focus-visible,
+.tmNavButton:focus-visible {
+  outline: 2px solid #61b405;
+  outline-offset: 2px;
+}
+
+.navButtonNext {
+  transform: rotate(180deg);
+}
+
+.sliderViewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.sliderTrack {
+  -ms-overflow-style: none;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.sliderTrack::-webkit-scrollbar,
+.tmTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.supplierCard {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 50%;
+  display: flex;
+  flex: 0 0 340px;
+  height: 340px;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 340px;
+}
+
+.featuredCard {
+  border-color: #e8e8e8;
+}
+
+.featuredBackground {
+  object-fit: cover;
+}
+
+.logoWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.logoImage {
+  height: auto;
+  object-fit: contain;
+  width: auto;
+}
+
+.plusButton {
+  align-items: center;
+  background-color: #02247b;
+  border: none;
+  border-radius: 50%;
+  bottom: 20px;
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  left: 50%;
+  padding: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 50px;
+  z-index: 2;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modalTop {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.modalLogo {
+  height: 140px;
+  position: relative;
+  width: 240px;
+}
+
+.modalLogoImage {
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  width: 100%;
+}
+
+.modalSectionTitle {
+  color: #02247b;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.modalTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modalParagraph {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.tmSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: auto;
+  padding-top: 26px;
+}
+
+.tmHeader {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tmTitle {
+  color: #02247b;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+}
+
+.tmNavigation {
+  display: flex;
+  gap: 10px;
+}
+
+.tmNavButton {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #02247b;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  padding: 0;
+  width: 40px;
+}
+
+.tmNavButtonNext {
+  transform: rotate(180deg);
+}
+
+.tmViewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.tmTrack {
+  -ms-overflow-style: none;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tmCard {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  flex: 0 0 200px;
+  height: 200px;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 200px;
+}
+
+.tmCardFeatured {
+  border-color: #61b405;
+}
+
+.tmFeaturedBackground {
+  object-fit: cover;
+}
+
+.tmLogo {
+  height: auto;
+  object-fit: contain;
+  width: auto;
+  z-index: 1;
+}
+
+@media (max-width: 1199px) {
+  .suppliers {
+    padding: 96px 0 80px;
+  }
+
+  .sectionTitle {
+    font-size: 40px;
+  }
+
+  .supplierCard {
+    flex-basis: 300px;
+    height: 300px;
+    width: 300px;
+  }
+
+  .plusButton {
+    bottom: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .suppliers {
+    padding: 64px 0;
+  }
+
+  .suppliersHeader {
+    margin-bottom: 24px;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+
+  .navigationButtons {
+    display: none;
+  }
+
+  .supplierCard {
+    flex-basis: 240px;
+    height: 240px;
+    width: 240px;
+  }
+
+  .plusButton {
+    bottom: 12px;
+    height: 42px;
+    width: 42px;
+  }
+
+  .modalLogo {
+    width: 200px;
+  }
+
+  .modalSectionTitle,
+  .tmTitle {
+    font-size: 20px;
+  }
+
+  .modalParagraph {
+    font-size: 14px;
+  }
+
+  .tmCard {
+    flex-basis: 170px;
+    height: 170px;
+    width: 170px;
+  }
+}

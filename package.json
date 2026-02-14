@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "NODE_OPTIONS='--max-old-space-size=6144' next dev",
+    "build": "NODE_OPTIONS='--max-old-space-size=8192' next build",
     "start": "next start",
     "lint": "eslint"
   },
+  "engines": {
+    "node": ">=20 <24"
+  },
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "next": "16.1.6",
+    "next-intl": "^4.8.2",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },

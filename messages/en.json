@@ -1,0 +1,106 @@
+{
+  "common": {
+    "home": "Home",
+    "catalog": "Catalog",
+    "news": "News",
+    "objects": "Projects",
+    "contacts": "Contacts",
+    "brand": "Brand",
+    "more": "Learn more",
+    "search": "Search products",
+    "scrollToTop": "Back to top",
+    "write": "Message",
+    "quickRequest": "Quick request",
+    "article": "Article",
+    "mapComingSoon": "Map will be connected soon",
+    "warehouseImage": "Warehouse image",
+    "articleImage": "Article image",
+    "partnerPhoto": "Partnership photo",
+    "uzbekistanMap": "Map of Uzbekistan"
+  },
+  "meta": {
+    "title": "UZCHEM — distributor of construction materials",
+    "description": "UZCHEM — distributor of construction and finishing materials in Uzbekistan"
+  },
+  "header": {
+    "catalog": "Catalog"
+  },
+  "footer": {
+    "address": "Tashkent region, Kibray district,\nKaramurt street, 2A"
+  },
+  "home": {
+    "heroSubtitle": "distributor of construction\nand finishing materials",
+    "aboutTitle": "About company",
+    "aboutStep1": "We distribute dry construction mixes and finishing materials",
+    "aboutStep2": "We work with leading global brands of the construction industry",
+    "aboutStep3": "We provide a full range of construction materials",
+    "aboutStep4": "We guarantee quality and timely delivery of products",
+    "nearbyTitle": "UZCHEM — we are close to you",
+    "nearbyDesc": "We supply construction materials across the entire territory of Uzbekistan",
+    "statArea": "Warehouse area",
+    "statProducts": "Product items",
+    "statObjects": "Projects",
+    "statRegions": "Regions of presence",
+    "suppliersTitle": "Supplier factories",
+    "partnersTitle": "For suppliers",
+    "partnerStep1Title": "Procurement department",
+    "partnerStep1Desc": "Description of the supplier partnership process",
+    "partnerStep2Title": "Management system",
+    "partnerStep2Desc": "Description of the supply management system",
+    "partnerSlide1Title": "Our company",
+    "partnerSlide1Desc": "UZCHEM holds leading positions in the distribution of construction and finishing materials across the Republic of Uzbekistan.",
+    "partnerSlide2Title": "Management system",
+    "partnerSlide2Desc": "We act as a reliable supplier of globally recognized brands for retail outlets and construction organizations nationwide.",
+    "partnerSlide3Title": "Deliveries",
+    "partnerSlide3Desc": "Our extensive dealer network ensures uninterrupted deliveries to retail outlets and supply channels in both B2B and B2C segments.",
+    "partnerSlide4Title": "Warehouse and logistics",
+    "partnerSlide4Desc": "The UZCHEM team provides high-quality daily service and includes a dedicated claims specialist to resolve issues related to reclamations."
+  },
+  "catalog": {
+    "title": "Catalog",
+    "brands": "Brands",
+    "categories": "Categories",
+    "putties": "Putties",
+    "dryMixes": "Dry construction mixes",
+    "cementSand": "Cement-sand mixes",
+    "floorLevelers": "Floor levelers",
+    "plasters": "Plasters",
+    "masonryMixes": "Masonry and installation mixes",
+    "facadeMixes": "Facade mixes",
+    "repairCompounds": "Repair compounds",
+    "plasteringAccessories": "Accessories for plastering and floor leveling",
+    "tilegrout": "Tile grout",
+    "cementBulk": "Cement and bulk materials",
+    "waterproofing": "Waterproofing",
+    "wallFacade": "Wall and facade materials",
+    "drywallMaterials": "Drywall materials",
+    "constructionSupplies": "Construction supplies"
+  },
+  "product": {
+    "shortSpecs": "Product overview",
+    "characteristics": "Characteristics",
+    "description": "Description",
+    "calculator": "Calculator",
+    "contactManager": "For detailed information, contact our manager",
+    "similarProducts": "Similar products",
+    "calculatorPlaceholder": "Material consumption calculator (coming soon)",
+    "consumption": "Consumption",
+    "adhesionStrength": "Adhesion strength",
+    "compressiveStrength": "Compressive strength",
+    "settingTime": "Setting time",
+    "workingTemperature": "Working temperature"
+  },
+  "objects": {
+    "title": "Projects",
+    "typesTitle": "Project types",
+    "residential": "Residential",
+    "commercial": "Commercial"
+  },
+  "news": {
+    "title": "News"
+  },
+  "contacts": {
+    "title": "Contacts",
+    "mainOffice": "Main office"
+  }
+}

@@ -1,0 +1,10 @@
+<svg width="1200" height="500" viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="500" fill="#3d3d3d"/>
+  <rect x="100" y="100" width="400" height="20" rx="4" fill="#c5a832"/>
+  <rect x="100" y="140" width="400" height="20" rx="4" fill="#c5a832"/>
+  <rect x="100" y="180" width="400" height="20" rx="4" fill="#c5a832"/>
+  <rect x="600" y="60" width="500" height="380" rx="8" fill="#555"/>
+  <rect x="620" y="80" width="200" height="160" rx="4" fill="#666"/>
+  <rect x="840" y="80" width="240" height="160" rx="4" fill="#4a4a4a"/>
+  <text x="600" y="480" text-anchor="middle" font-family="Arial" font-size="18" fill="#999">Steel & Metal Products</text>
+</svg>

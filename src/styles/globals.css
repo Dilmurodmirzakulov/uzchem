@@ -1,0 +1,181 @@
+/* Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Design Tokens */
+@import './variables.css';
+
+/* ===== Global Resets & Base Styles ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  color: var(--color-text-body);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* ===== Typography ===== */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-dark);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-green);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== Bootstrap Overrides ===== */
+
+.btn {
+  font-family: var(--font-montserrat), 'Montserrat', sans-serif;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 10px 24px;
+  transition: all var(--transition-normal);
+}
+
+.btn-primary {
+  background-color: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-navy-dark);
+  border-color: var(--color-navy-dark);
+}
+
+.btn-success {
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.btn-success:hover {
+  background-color: var(--color-green-hover);
+  border-color: var(--color-green-hover);
+}
+
+.btn-outline-success {
+  color: var(--color-green);
+  border-color: var(--color-green);
+}
+
+.btn-outline-success:hover {
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.container {
+  max-width: var(--container-max);
+}
+
+/* ===== Utility Classes ===== */
+
+.section {
+  padding: var(--section-padding-y) 0;
+}
+
+.section--gray {
+  background-color: var(--color-light-bg);
+}
+
+.text-green {
+  color: var(--color-green) !important;
+}
+
+.text-navy {
+  color: var(--color-navy) !important;
+}
+
+.bg-green {
+  background-color: var(--color-green) !important;
+}
+
+.bg-navy {
+  background-color: var(--color-navy) !important;
+}
+
+/* ===== Scrollbar ===== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding-y: 40px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}

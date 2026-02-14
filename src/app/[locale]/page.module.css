@@ -1,0 +1,671 @@
+/* ===== Section Title ===== */
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 8px;
+}
+
+/* ===== About Section ===== */
+.about {
+  background-color: var(--color-white);
+}
+
+.aboutCards {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.aboutMobile {
+  display: none;
+}
+
+.aboutMobileInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.aboutMobileTabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.aboutMobileTab {
+  height: 34px;
+  border-radius: 20px;
+  border: 1px solid var(--color-gray-border);
+  background-color: var(--color-white);
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.aboutMobileTab1 {
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.aboutMobileCards {
+  position: relative;
+}
+
+.aboutMobileCard {
+  position: relative;
+  min-height: 400px;
+  border: 1px solid var(--color-gray-border);
+  border-radius: 20px;
+  background-color: var(--color-white);
+  padding: 20px;
+  overflow: hidden;
+  display: none;
+}
+
+.aboutMobileCard1 {
+  display: block;
+}
+
+.aboutMobileText {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--color-text-body);
+  max-width: 280px;
+}
+
+.aboutMobileNumber {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-green);
+  z-index: 2;
+}
+
+.aboutMobileIcon {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.aboutMobileCard::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  bottom: -30px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      transparent 20px,
+      rgba(222, 226, 230, 0.55) 20px,
+      rgba(222, 226, 230, 0.55) 21.5px,
+      transparent 21.5px
+    ),
+    radial-gradient(
+      circle,
+      transparent 36px,
+      rgba(222, 226, 230, 0.45) 36px,
+      rgba(222, 226, 230, 0.45) 37.5px,
+      transparent 37.5px
+    ),
+    radial-gradient(
+      circle,
+      transparent 52px,
+      rgba(222, 226, 230, 0.35) 52px,
+      rgba(222, 226, 230, 0.35) 53.5px,
+      transparent 53.5px
+    ),
+    radial-gradient(
+      circle,
+      transparent 68px,
+      rgba(222, 226, 230, 0.25) 68px,
+      rgba(222, 226, 230, 0.25) 69.5px,
+      transparent 69.5px
+    ),
+    radial-gradient(
+      circle,
+      transparent 84px,
+      rgba(222, 226, 230, 0.18) 84px,
+      rgba(222, 226, 230, 0.18) 85.5px,
+      transparent 85.5px
+    );
+}
+
+:global(#about-mobile-tab-1):checked ~ .aboutMobileTabs .aboutMobileTab,
+:global(#about-mobile-tab-2):checked ~ .aboutMobileTabs .aboutMobileTab,
+:global(#about-mobile-tab-3):checked ~ .aboutMobileTabs .aboutMobileTab,
+:global(#about-mobile-tab-4):checked ~ .aboutMobileTabs .aboutMobileTab {
+  background-color: var(--color-white);
+  border-color: var(--color-gray-border);
+  color: var(--color-text-muted);
+}
+
+:global(#about-mobile-tab-1):checked ~ .aboutMobileTabs .aboutMobileTab1,
+:global(#about-mobile-tab-2):checked ~ .aboutMobileTabs .aboutMobileTab2,
+:global(#about-mobile-tab-3):checked ~ .aboutMobileTabs .aboutMobileTab3,
+:global(#about-mobile-tab-4):checked ~ .aboutMobileTabs .aboutMobileTab4 {
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+  color: var(--color-white);
+}
+
+:global(#about-mobile-tab-1):checked ~ .aboutMobileCards .aboutMobileCard,
+:global(#about-mobile-tab-2):checked ~ .aboutMobileCards .aboutMobileCard,
+:global(#about-mobile-tab-3):checked ~ .aboutMobileCards .aboutMobileCard,
+:global(#about-mobile-tab-4):checked ~ .aboutMobileCards .aboutMobileCard {
+  display: none;
+}
+
+:global(#about-mobile-tab-1):checked ~ .aboutMobileCards .aboutMobileCard1,
+:global(#about-mobile-tab-2):checked ~ .aboutMobileCards .aboutMobileCard2,
+:global(#about-mobile-tab-3):checked ~ .aboutMobileCards .aboutMobileCard3,
+:global(#about-mobile-tab-4):checked ~ .aboutMobileCards .aboutMobileCard4 {
+  display: block;
+}
+
+/* --- Base card: collapsed state --- */
+.aboutStep {
+  position: relative;
+  height: 380px;
+  padding: 28px;
+  border: 1px solid var(--color-gray-border);
+  border-radius: 20px;
+  background-color: var(--color-white);
+  overflow: hidden;
+  flex: 1;
+  cursor: pointer;
+  isolation: isolate;
+  transition: flex 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: flex 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transition: flex 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  -ms-transition: flex 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition: flex 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Concentric rings at bottom-right */
+.aboutStep::after {
+  content: "";
+  position: absolute;
+  right: -100px;
+  bottom: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      transparent 28px,
+      #f7fbf2 28px,
+      #f7fbf2 32px,
+      transparent 32px
+    ),
+    radial-gradient(
+      circle,
+      transparent 36px,
+      #f2f4f8 36px,
+      #f2f4f8 39.5px,
+      transparent 39.5px
+    ),
+    radial-gradient(
+      circle,
+      transparent 44px,
+      #f7fbf2 44px,
+      #f7fbf2 47px,
+      transparent 47px
+    ),
+    radial-gradient(
+      circle,
+      transparent 52px,
+      #f2f4f8 52px,
+      #f2f4f8 54.5px,
+      transparent 54.5px
+    ),
+    radial-gradient(
+      circle,
+      transparent 60px,
+      #f7fbf2 60px,
+      #f7fbf2 62px,
+      transparent 62px
+    ),
+    radial-gradient(
+      circle,
+      transparent 68px,
+      #f2f4f8 68px,
+      #f2f4f8 69.5px,
+      transparent 69.5px
+    );
+  transform: scale(1.75);
+  opacity: 1;
+  transition:
+    transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-transform: scale(1.75);
+  -moz-transform: scale(1.75);
+  -ms-transform: scale(1.75);
+  -o-transform: scale(1.75);
+  -webkit-transition:
+    -webkit-transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
+  -moz-transition:
+    -moz-transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
+  -ms-transition:
+    -ms-transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
+  -o-transition:
+    -o-transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
+}
+
+.aboutStep::before {
+  content: "";
+  position: absolute;
+  right: -100px;
+  bottom: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      transparent 42.75px,
+      #f7fbf2 42.75px,
+      #f7fbf2 46.75px,
+      transparent 46.75px
+    ),
+    radial-gradient(
+      circle,
+      transparent 58.75px,
+      #f2f4f8 58.75px,
+      #f2f4f8 62.25px,
+      transparent 62.25px
+    ),
+    radial-gradient(
+      circle,
+      transparent 74.75px,
+      #f7fbf2 74.75px,
+      #f7fbf2 77.75px,
+      transparent 77.75px
+    ),
+    radial-gradient(
+      circle,
+      transparent 90.75px,
+      #f2f4f8 90.75px,
+      #f2f4f8 93.25px,
+      transparent 93.25px
+    ),
+    radial-gradient(
+      circle,
+      transparent 106.75px,
+      #f7fbf2 106.75px,
+      #f7fbf2 108.75px,
+      transparent 108.75px
+    ),
+    radial-gradient(
+      circle,
+      transparent 122.75px,
+      #f2f4f8 122.75px,
+      #f2f4f8 124.25px,
+      transparent 124.25px
+    );
+  transform: scale(1.75);
+  opacity: 0;
+  transition:
+    transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+  -webkit-transform: scale(1.75);
+  -moz-transform: scale(1.75);
+  -ms-transform: scale(1.75);
+  -o-transform: scale(1.75);
+  -webkit-transition:
+    -webkit-transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
+  -moz-transition:
+    -moz-transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
+  -ms-transition:
+    -ms-transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
+  -o-transition:
+    -o-transform 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease;
+}
+
+.aboutStepActive::after {
+  transform: scale(2);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+  opacity: 0;
+}
+
+.aboutStepActive::before {
+  transform: scale(2);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+  opacity: 1;
+}
+
+/* Icon: collapsed = centered at top */
+.aboutIcon {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: top 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Text: hidden in collapsed */
+.aboutText {
+  position: relative;
+  z-index: 2;
+  padding-top: 72px;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: auto;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+/* Number: bottom-left always */
+.aboutNumber {
+  position: absolute;
+  left: calc(100% - 30px);
+  bottom: 30px;
+  right: auto;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-green);
+  line-height: 1;
+  z-index: 2;
+  transform: translateX(-100%);
+  transition:
+    left 0.35s ease,
+    transform 0.35s ease,
+    color 0.35s ease;
+  -webkit-transition:
+    left 0.35s ease,
+    transform 0.35s ease,
+    color 0.35s ease;
+  -moz-transition:
+    left 0.35s ease,
+    transform 0.35s ease,
+    color 0.35s ease;
+  -ms-transition:
+    left 0.35s ease,
+    transform 0.35s ease,
+    color 0.35s ease;
+  -o-transition:
+    left 0.35s ease,
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+.aboutStepActive {
+  flex: 3;
+}
+
+.aboutStepActive .aboutNumber {
+  left: 30px;
+  transform: translateX(0);
+}
+
+.aboutStepActive .aboutIcon {
+  top: calc(100% - 30px - 48px);
+}
+
+.aboutStepActive .aboutText {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== UZCHEM Nearby Section ===== */
+.nearby {
+  background-color: #02247b;
+  padding: 86px 0 42px;
+  color: var(--color-white);
+}
+
+.nearbyGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 941px) minmax(280px, 360px);
+  grid-template-areas:
+    "title title"
+    "map info";
+  justify-content: space-between;
+  column-gap: 40px;
+  row-gap: 42px;
+  align-items: end;
+}
+
+.nearbyMapColumn {
+  grid-area: map;
+  display: flex;
+  flex-direction: column;
+}
+
+.nearbyInfoColumn {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-self: end;
+}
+
+.nearbyTitle {
+  grid-area: title;
+  color: var(--color-white);
+  font-size: clamp(2.8rem, 5vw, 6rem);
+  line-height: 1.02;
+  font-weight: 700;
+  text-align: right;
+  max-width: 1180px;
+  width: 100%;
+  justify-self: end;
+  margin: 0;
+}
+
+.nearbyMap {
+  width: 100%;
+  max-width: 941px;
+  margin-bottom: 20px;
+}
+
+.nearbyMap :global(svg) {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mapPlaceholder {
+  width: 100%;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nearbyDesc {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  line-height: 1.35;
+  font-weight: 500;
+  max-width: 460px;
+  margin: 0;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  max-width: 100%;
+}
+
+.statItem {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 13px 0;
+}
+
+.statItem + .statItem {
+  border-top: 1px solid #0e3597;
+}
+
+.statNumber {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--color-white);
+  min-width: 152px;
+  text-align: right;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: var(--color-white);
+  width: 128px;
+  line-height: 1.2;
+  text-align: left;
+  font-weight: 500;
+}
+
+/* ===== Partners Section ===== */
+.partners {
+  background-color: var(--color-light-bg);
+}
+
+.partnerImage {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.partnerSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.partnerStep {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.partnerStepNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-green);
+  line-height: 1;
+  min-width: 60px;
+}
+
+.partnerStep h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-bottom: 4px;
+}
+
+.partnerStep p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .aboutCards {
+    display: none;
+  }
+
+  .aboutMobile {
+    display: block;
+  }
+
+  .nearby {
+    padding: 72px 0 44px;
+  }
+
+  .nearbyGrid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "map"
+      "info";
+    gap: 36px;
+  }
+
+  .nearbyInfoColumn {
+    align-items: flex-start;
+  }
+
+  .nearbyTitle {
+    font-size: 2rem;
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .stats {
+    max-width: 100%;
+  }
+
+  .statItem {
+    justify-content: flex-start;
+  }
+
+  .statNumber {
+    text-align: left;
+  }
+
+  .nearbyDesc {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .aboutMobileCard {
+    min-height: 360px;
+  }
+}

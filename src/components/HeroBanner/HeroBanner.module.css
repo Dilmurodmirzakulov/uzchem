@@ -1,0 +1,308 @@
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+/* ===== Background Slides ===== */
+.slidesContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Previous slide stays visible underneath during transition */
+.slidePrev {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slideActive {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.slideImage {
+  object-fit: cover;
+}
+
+/* Slide animation: reveal left-to-right */
+@keyframes slideIn {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.slideEnterFromLeft {
+  animation: slideInFromLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.slideEnterFromRight {
+  animation: slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ===== Green Section (Desktop: diagonal overlay, Mobile: solid block) ===== */
+.greenSection {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    115deg,
+    var(--color-green) 0%,
+    var(--color-green) 42%,
+    transparent 42.1%
+  );
+}
+
+/* ===== Content ===== */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 90px 16px 40px;
+}
+
+.title {
+  color: var(--color-white);
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+  max-width: 480px;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 380px;
+}
+
+/* ===== Thumbnails + Arrow ===== */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 380px;
+}
+
+.thumbnailsViewport {
+  overflow: hidden;
+  /* 3 thumbs * 48px + 2 gaps * 10px = 164px */
+  width: 164px;
+  flex-shrink: 0;
+}
+
+.thumbnailsTrack {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  will-change: transform;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.thumb {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.thumb:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.08);
+}
+
+.thumbActive {
+  border-color: var(--color-white);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.thumbImage {
+  object-fit: cover;
+}
+
+.arrowBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.arrowBtn:hover {
+  opacity: 1;
+}
+
+/* ===== Responsive: Tablet ===== */
+@media (max-width: 992px) {
+  .hero {
+    height: 450px;
+  }
+
+  .greenSection {
+    background: linear-gradient(
+      115deg,
+      var(--color-green) 0%,
+      var(--color-green) 50%,
+      transparent 50.1%
+    );
+  }
+
+  .title {
+    font-size: 2.75rem;
+  }
+}
+
+/* ===== Responsive: Mobile -- Stacked layout ===== */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Image sits below the green block */
+  .slidesContainer {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    flex-shrink: 0;
+    order: 2;
+  }
+
+  /* Green block sits on top -- solid green, not diagonal */
+  .greenSection {
+    position: relative;
+    width: 100%;
+    order: 1;
+    background: var(--color-green);
+    /* Override diagonal */
+    background-image: none;
+  }
+
+  .content {
+    height: auto;
+    padding: 132px 20px 32px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    max-width: 100%;
+    letter-spacing: 0;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
+
+  /* Thumbnails left, arrow pushed to the right */
+  .controls {
+    justify-content: space-between;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .thumbnailsViewport {
+    /* 3 thumbs * 48px + 2 gaps * 10px = 164px */
+    width: 164px;
+  }
+
+  .thumb {
+    width: 48px;
+    height: 48px;
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .thumbActive {
+    border-color: var(--color-white);
+  }
+
+  .arrowBtn {
+    opacity: 1;
+  }
+
+  .arrowBtn svg {
+    width: 48px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slidesContainer {
+    height: 220px;
+  }
+
+  .content {
+    padding: 128px 20px 24px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9375rem;
+    margin-bottom: 20px;
+  }
+
+  .thumb {
+    width: 42px;
+    height: 42px;
+  }
+
+  .thumbnailsViewport {
+    /* 3 thumbs * 42px + 2 gaps * 8px = 142px */
+    width: 142px;
+  }
+
+  .thumbnailsTrack {
+    gap: 8px;
+  }
+
+  .arrowBtn svg {
+    width: 40px;
+    height: 26px;
+  }
+}

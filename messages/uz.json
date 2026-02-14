@@ -1,0 +1,106 @@
+{
+  "common": {
+    "home": "Bosh sahifa",
+    "catalog": "Katalog",
+    "news": "Yangiliklar",
+    "objects": "Obyektlar",
+    "contacts": "Kontaktlar",
+    "brand": "Brend",
+    "more": "Batafsil",
+    "search": "Tovarlarni qidirish",
+    "scrollToTop": "Yuqoriga",
+    "write": "Yozish",
+    "quickRequest": "Tezkor so'rov",
+    "article": "Artikul",
+    "mapComingSoon": "Xarita keyinroq ulanadi",
+    "warehouseImage": "Ombor rasmi",
+    "articleImage": "Maqola rasmi",
+    "partnerPhoto": "Hamkorlik rasmi",
+    "uzbekistanMap": "O'zbekiston xaritasi"
+  },
+  "meta": {
+    "title": "UZCHEM — qurilish materiallari distribyutori",
+    "description": "UZCHEM — O'zbekistonda qurilish va pardozlash materiallari distribyutori"
+  },
+  "header": {
+    "catalog": "Katalog"
+  },
+  "footer": {
+    "address": "Toshkent viloyati, Qibray tumani,\nQaramurt ko'chasi, 2A"
+  },
+  "home": {
+    "heroSubtitle": "qurilish va pardozlash\nmateriallari distribyutori",
+    "aboutTitle": "Kompaniya haqida",
+    "aboutStep1": "Biz quruq qurilish aralashmalari va pardozlash materiallarini distribyutsiya qilamiz",
+    "aboutStep2": "Qurilish sanoatining yetakchi jahon brendlari bilan ishlaymiz",
+    "aboutStep3": "Qurilish uchun to'liq assortiment materiallarini ta'minlaymiz",
+    "aboutStep4": "Sifat va mahsulotni o'z vaqtida yetkazib berishni kafolatlaymiz",
+    "nearbyTitle": "UZCHEM — biz siz bilan yonma-yonmiz",
+    "nearbyDesc": "Biz O'zbekistonning barcha hududlarini qurilish materiallari bilan ta'minlaymiz",
+    "statArea": "Omborlar maydoni",
+    "statProducts": "Tovarlar nomi",
+    "statObjects": "Obyektlar",
+    "statRegions": "Hududlar mavjudligi",
+    "suppliersTitle": "Zavod-yetkazib beruvchilar",
+    "partnersTitle": "Yetkazib beruvchilarga",
+    "partnerStep1Title": "Xaridlar bo'limi",
+    "partnerStep1Desc": "Yetkazib beruvchilar bilan ishlash jarayoni tavsifi",
+    "partnerStep2Title": "Boshqaruv tizimi",
+    "partnerStep2Desc": "Yetkazib berish boshqaruv tizimi tavsifi",
+    "partnerSlide1Title": "Kompaniyamiz",
+    "partnerSlide1Desc": "UZCHEM O'zbekiston Respublikasi hududida qurilish va pardozlash materiallarini tarqatish bozorida yetakchi o'rinlarni egallaydi.",
+    "partnerSlide2Title": "Boshqaruv tizimi",
+    "partnerSlide2Desc": "Biz butun mamlakat bo'ylab savdo nuqtalari va qurilish tashkilotlari uchun jahon miqyosida tan olingan brendlarning ishonchli yetkazib beruvchisimiz.",
+    "partnerSlide3Title": "Yetkazib berish",
+    "partnerSlide3Desc": "Mamlakat bo'ylab keng dilerlik tarmog'imiz savdo nuqtalariga hamda B2B va B2C kanallariga uzluksiz yetkazib berishni ta'minlaydi.",
+    "partnerSlide4Title": "Ombor va logistika",
+    "partnerSlide4Desc": "UZCHEM professional jamoasi har kuni sifatli servis ko'rsatadi va reklamatsiyalar bilan bog'liq masalalarni hal qilish uchun OTEK mutaxassisiga ega."
+  },
+  "catalog": {
+    "title": "Katalog",
+    "brands": "Brendlar",
+    "categories": "Kategoriyalar",
+    "putties": "Shpaklyovkalar",
+    "dryMixes": "Quruq qurilish aralashmalari",
+    "cementSand": "Sement-qum aralashmalari",
+    "floorLevelers": "Pol tekislash aralashmalari",
+    "plasters": "Shtukaturkalar",
+    "masonryMixes": "Terish va montaj aralashmalari",
+    "facadeMixes": "Fasad aralashmalari",
+    "repairCompounds": "Ta'mirlash tarkiblari",
+    "plasteringAccessories": "Shtukaturka ishlari va polni tekislash uchun ehtiyot qismlar",
+    "tilegrout": "Plitka uchun bo'g'im to'ldiruvchi",
+    "cementBulk": "Sement va uyma materiallar",
+    "waterproofing": "Gidroizolyatsiya",
+    "wallFacade": "Devor va fasad materiallari",
+    "drywallMaterials": "Quruq qurilish materiallari",
+    "constructionSupplies": "Qurilish sarf materiallari"
+  },
+  "product": {
+    "shortSpecs": "Tovar haqida qisqacha",
+    "characteristics": "Xususiyatlari",
+    "description": "Tavsif",
+    "calculator": "Kalkulyator",
+    "contactManager": "Batafsil ma'lumot uchun menejer bilan bog'laning",
+    "similarProducts": "O'xshash tovarlar",
+    "calculatorPlaceholder": "Material sarfi kalkulyatori (keyinroq qo'shiladi)",
+    "consumption": "Sarfi",
+    "adhesionStrength": "Yopishqoqlik mustahkamligi",
+    "compressiveStrength": "Siqilish mustahkamligi",
+    "settingTime": "Qotish vaqti",
+    "workingTemperature": "Ish harorati"
+  },
+  "objects": {
+    "title": "Obyektlar",
+    "typesTitle": "Obyekt turlari",
+    "residential": "Turar-joy",
+    "commercial": "Noturar-joy"
+  },
+  "news": {
+    "title": "Yangiliklar"
+  },
+  "contacts": {
+    "title": "Kontaktlar",
+    "mainOffice": "Bosh ofis"
+  }
+}

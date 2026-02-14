@@ -1,0 +1,158 @@
+.objectsSection {
+  background-color: var(--color-white);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  font-style: italic;
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-gray-border);
+}
+
+.tab {
+  padding: 10px 28px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: var(--color-white);
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.tab:hover {
+  color: var(--color-text-dark);
+}
+
+.tabActive {
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.tabActive:hover {
+  color: var(--color-white);
+}
+
+/* ===== Fullscreen Object Modal ===== */
+.modalContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHero {
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  min-height: 300px;
+  flex-shrink: 0;
+}
+
+.modalHeroImg {
+  object-fit: cover;
+}
+
+.modalHeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.modalHeroText {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  padding: 0 40px;
+  z-index: 1;
+}
+
+.modalTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.modalBody {
+  flex: 1;
+  padding: 48px 0;
+  overflow-y: auto;
+}
+
+.modalDesc {
+  font-size: 1.0625rem;
+  color: var(--color-text-body);
+  line-height: 1.7;
+  max-width: 720px;
+  margin-bottom: 40px;
+}
+
+.gallery {
+  margin-top: 16px;
+}
+
+.galleryItem {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.galleryImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .modalHero {
+    height: 35vh;
+    min-height: 220px;
+  }
+
+  .modalHeroText {
+    padding: 0 20px;
+    bottom: 24px;
+  }
+
+  .modalTitle {
+    font-size: 2rem;
+  }
+
+  .modalBody {
+    padding: 24px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .modalTitle {
+    font-size: 1.5rem;
+  }
+}

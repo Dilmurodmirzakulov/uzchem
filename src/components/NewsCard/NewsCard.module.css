@@ -1,0 +1,61 @@
+.card {
+  display: block;
+  text-decoration: none;
+  transition: transform var(--transition-normal);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  margin-bottom: 12px;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.plusIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-green);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  transition: all var(--transition-fast);
+}
+
+.card:hover .plusIcon {
+  opacity: 1;
+  background-color: var(--color-green-hover);
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+  line-height: 1.4;
+  margin: 0;
+  transition: color var(--transition-fast);
+}
+
+.card:hover .title {
+  color: var(--color-green);
+}

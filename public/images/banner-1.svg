@@ -1,0 +1,9 @@
+<svg width="1200" height="500" viewBox="0 0 1200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="500" fill="#3a3a3a"/>
+  <rect x="200" y="80" width="180" height="340" rx="8" fill="#555"/>
+  <rect x="420" y="120" width="160" height="260" rx="8" fill="#666"/>
+  <circle cx="800" cy="200" r="80" fill="#4a4a4a"/>
+  <circle cx="950" cy="300" r="60" fill="#505050"/>
+  <rect x="700" y="350" width="400" height="100" rx="8" fill="#4a4a4a"/>
+  <text x="600" y="260" text-anchor="middle" font-family="Arial" font-size="18" fill="#999">Construction Materials</text>
+</svg>
