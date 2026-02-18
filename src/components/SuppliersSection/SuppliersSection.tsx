@@ -278,7 +278,7 @@ export default function SuppliersSection() {
                     aria-label={`Open ${supplier.name} details`}
                     onClick={() => setSelectedSupplier(supplier)}
                   >
-                    <Image src="/images/suppliers/plus.png" alt="" width={16} height={16} aria-hidden />
+                    <Image src="/images/suppliers/plus.svg" alt="" width={16} height={16} aria-hidden />
                   </button>
                 </div>
               ))}

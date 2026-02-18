@@ -69,9 +69,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className={styles.footerBottom}>
-          <p>&copy; Uzchem, 2025</p>
-        </div>
+      </div>
+      <div className={styles.footerBottom}>
+        <p>&copy; Uzchem, 2025</p>
       </div>
     </footer>
   );

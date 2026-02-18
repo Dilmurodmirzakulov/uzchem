@@ -110,47 +110,58 @@
 .aboutMobileCard::after {
   content: "";
   position: absolute;
-  right: -30px;
-  bottom: -30px;
-  width: 170px;
-  height: 170px;
+  right: -110px;
+  bottom: -110px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   background:
     radial-gradient(
       circle,
-      transparent 20px,
-      rgba(222, 226, 230, 0.55) 20px,
-      rgba(222, 226, 230, 0.55) 21.5px,
-      transparent 21.5px
+      transparent 28px,
+      #f7fbf2 28px,
+      #f7fbf2 32px,
+      transparent 32px
     ),
     radial-gradient(
       circle,
       transparent 36px,
-      rgba(222, 226, 230, 0.45) 36px,
-      rgba(222, 226, 230, 0.45) 37.5px,
-      transparent 37.5px
+      #f2f4f8 36px,
+      #f2f4f8 39.5px,
+      transparent 39.5px
+    ),
+    radial-gradient(
+      circle,
+      transparent 44px,
+      #f7fbf2 44px,
+      #f7fbf2 47px,
+      transparent 47px
     ),
     radial-gradient(
       circle,
       transparent 52px,
-      rgba(222, 226, 230, 0.35) 52px,
-      rgba(222, 226, 230, 0.35) 53.5px,
-      transparent 53.5px
+      #f2f4f8 52px,
+      #f2f4f8 54.5px,
+      transparent 54.5px
+    ),
+    radial-gradient(
+      circle,
+      transparent 60px,
+      #f7fbf2 60px,
+      #f7fbf2 62px,
+      transparent 62px
     ),
     radial-gradient(
       circle,
       transparent 68px,
-      rgba(222, 226, 230, 0.25) 68px,
-      rgba(222, 226, 230, 0.25) 69.5px,
+      #f2f4f8 68px,
+      #f2f4f8 69.5px,
       transparent 69.5px
-    ),
-    radial-gradient(
-      circle,
-      transparent 84px,
-      rgba(222, 226, 230, 0.18) 84px,
-      rgba(222, 226, 230, 0.18) 85.5px,
-      transparent 85.5px
     );
+  transform: scale(1.75);
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
 }
 
 :global(#about-mobile-tab-1):checked ~ .aboutMobileTabs .aboutMobileTab,
@@ -208,8 +219,8 @@
 .aboutStep::after {
   content: "";
   position: absolute;
-  right: -100px;
-  bottom: -100px;
+  right: -96px;
+  bottom: -98px;
   width: 300px;
   height: 300px;
   border-radius: 50%;
@@ -542,7 +553,7 @@
 
 .statItem {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 14px;
   padding: 13px 0;
@@ -557,7 +568,6 @@
   font-weight: 600;
   color: var(--color-white);
   min-width: 152px;
-  text-align: right;
   line-height: 1;
 }
 
@@ -566,7 +576,7 @@
   color: var(--color-white);
   width: 128px;
   line-height: 1.2;
-  text-align: left;
+  text-align: right;
   font-weight: 500;
 }
 
@@ -653,10 +663,6 @@
 
   .statItem {
     justify-content: flex-start;
-  }
-
-  .statNumber {
-    text-align: left;
   }
 
   .nearbyDesc {

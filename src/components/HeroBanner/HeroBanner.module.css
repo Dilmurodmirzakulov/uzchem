@@ -12,6 +12,17 @@
   z-index: 0;
 }
 
+.slidesContainer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 31.1%);
+  pointer-events: none;
+  z-index: 3;
+}
+
 .slide {
   position: absolute;
   inset: 0;
@@ -69,10 +80,10 @@
   inset: 0;
   z-index: 2;
   background: linear-gradient(
-    115deg,
+    65deg,
     var(--color-green) 0%,
-    var(--color-green) 42%,
-    transparent 42.1%
+    var(--color-green) 48%,
+    transparent 48.1%
   );
 }
 
@@ -89,7 +100,7 @@
 
 .title {
   color: var(--color-white);
-  font-size: 3.5rem;
+  font-size: 6rem;
   font-weight: 800;
   margin-bottom: 12px;
   letter-spacing: -0.5px;
@@ -98,7 +109,7 @@
 
 .subtitle {
   color: rgba(255, 255, 255, 0.85);
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 40px;

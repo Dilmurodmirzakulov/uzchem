@@ -60,7 +60,7 @@
   justify-content: center;
   gap: 8px;
   width: 155px;
-  height: 42px;
+  height: 60px;
   background-color: var(--header-catalog-bg);
   color: var(--header-catalog-fg);
   border: 1px solid var(--header-catalog-border);
@@ -75,8 +75,15 @@
 }
 
 .catalogBtn:hover {
-  border-color: var(--color-green);
+  /* border-color: var(--color-green); */
   background-color: var(--header-catalog-bg);
+  color: var(--header-catalog-fg);
+}
+
+.headerTransparent .catalogBtn:hover {
+  /* border-color: var(--color-green); */
+  background-color: var(--header-catalog-bg);
+  opacity: 0.75;
   color: var(--header-catalog-fg);
 }
 
@@ -136,8 +143,8 @@
 }
 
 .logoImage {
-  width: 64px;
-  height: 64px;
+  width: 110px;
+  height: 110px;
   display: block;
 }
 
@@ -148,6 +155,12 @@
 .headerSolid .logoImageTransparent,
 .headerSolid .iconTransparent {
   display: none;
+}
+
+.headerSolid .logoImageSolid {
+  display: block;
+  width: 56px;
+  height: 56px;
 }
 
 .headerSolid .logoImageSolid,

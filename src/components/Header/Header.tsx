@@ -25,7 +25,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isTransparent = isHomePage && !scrolled;
+  const isTransparent = isHomePage && !scrolled && !mobileMenuOpen;
   const isMobileTopState = isHomePage && !scrolled && !mobileMenuOpen;
 
   const navLinks = [
