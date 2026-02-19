@@ -170,10 +170,10 @@ export default function Header() {
                   className={`${styles.mobileLogoImg} ${styles.mobileLogoImgSolid}`}
                 />
               </div>
-              <div className={styles.mobileLogoText}>
+              {/* <div className={styles.mobileLogoText}>
                 <span className={styles.mobileLogoName}>uzchem</span>
                 <span className={styles.mobileLogoTagline}>A Family Company</span>
-              </div>
+              </div> */}
             </Link>
 
             <div className={styles.mobileControls}>

@@ -333,8 +333,10 @@
 
 .mobileLogo {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
   text-decoration: none;
 }
 
@@ -343,8 +345,8 @@
 }
 
 .mobileLogoIcon {
-  width: 40px;
-  height: 40px;
+  /* width: 34px;
+  height: 34px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -360,6 +362,8 @@
 
 .mobileLogoImgTransparent {
   display: none;
+  width: 74px !important;
+  height: 80px !important;
 }
 
 .mobileLogoImgSolid {
@@ -369,11 +373,12 @@
 .mobileLogoText {
   display: flex;
   flex-direction: column;
+  align-items: center;
   line-height: 1;
 }
 
 .mobileLogoName {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--color-navy);
   text-transform: lowercase;
@@ -391,7 +396,7 @@
 .mobileControls {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .mobileLangWrapper {
@@ -409,12 +414,12 @@
   font-weight: 600;
   line-height: 1;
   cursor: pointer;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .mobileLangSwitcherTopState {
   background: transparent;
-  border-color: rgba(255, 255, 255, 0.45);
+  border-color: rgba(255, 255, 255, 0.3);
   color: var(--color-white);
 }
 
@@ -462,7 +467,7 @@
 
 .mobileMenuToggleTopState {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .mobileMenuToggleOpen {
@@ -472,19 +477,12 @@
 .mobileMenuIcon {
   display: block;
   width: 20px;
-  height: 2px;
-  border-radius: 999px;
-  background: currentColor;
+  height: 0;
+  background: transparent;
   position: relative;
   transition:
     transform var(--transition-fast),
     background-color var(--transition-fast);
-}
-
-.mobileMenuIconTopState,
-.mobileMenuIconTopState::before,
-.mobileMenuIconTopState::after {
-  background: var(--color-white);
 }
 
 .mobileMenuIcon::before,
@@ -502,11 +500,16 @@
 }
 
 .mobileMenuIcon::before {
-  top: -6px;
+  top: -4px;
 }
 
 .mobileMenuIcon::after {
-  top: 6px;
+  top: 4px;
+}
+
+.mobileMenuIconTopState::before,
+.mobileMenuIconTopState::after {
+  background: var(--color-white);
 }
 
 .mobileMenuIconOpen {
@@ -624,13 +627,12 @@
     justify-content: space-between;
     gap: 10px;
     background: var(--color-white);
-    border-bottom: 1px solid #f0f0f0;
     padding: 0 20px;
   }
 
   .mobileBarTopState {
     height: 95px;
-    padding-top: 15px;
+    padding: 15px 20px 0;
     align-items: flex-start;
     background: transparent;
     border-bottom-color: transparent;
@@ -648,13 +650,12 @@
     display: none;
   }
 
-  .mobileBarTopState .mobileLogoImgTransparent {
-    display: block;
-  }
-
-  .mobileBarTopState .mobileLogoIcon {
+  .headerSolid .mobileLogoIcon {
     width: 52px;
     height: 52px;
+  }
+  .mobileBarTopState .mobileLogoImgTransparent {
+    display: block;
   }
 
   .mobileBarTopState .mobileLogoText {

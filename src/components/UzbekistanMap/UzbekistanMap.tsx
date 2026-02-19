@@ -82,6 +82,13 @@ export default function UzbekistanMap() {
     ? regionsById.get(selectedRegionId)
     : undefined;
 
+  const hoveredRegionId =
+    hoveredPathIndex === null
+      ? undefined
+      : UZBEKISTAN_MAP_PATH_INDEX_TO_REGION_ID[hoveredPathIndex];
+
+  const hoveredRegion = hoveredRegionId ? regionsById.get(hoveredRegionId) : undefined;
+
   /* ---- fetch + preprocess SVG (runs once) ---- */
 
   useEffect(() => {
@@ -132,7 +139,6 @@ export default function UzbekistanMap() {
     const idx = Number(pathEl.getAttribute("data-region-index"));
     if (!Number.isFinite(idx) || idx < 0) return;
 
-    console.log("[UzbekistanMap] clicked regionIndex:", idx);
     setSelectedPathIndex(idx);
     setIsOpen(true);
   };
@@ -202,46 +208,53 @@ export default function UzbekistanMap() {
           style={{ left: 0, top: 0, opacity: 0 }}
           aria-hidden="true"
         >
-          {hoveredPathIndex !== null ? `Region #${hoveredPathIndex}` : ""}
+          {hoveredPathIndex !== null
+            ? hoveredRegion?.name ?? `Region #${hoveredPathIndex}`
+            : ""}
         </div>
       </div>
 
-      <Modal isOpen={isOpen} onClose={() => { setIsOpen(false); setSelectedPathIndex(null); }} variant="bottom">
+      <Modal
+        isOpen={isOpen}
+        onClose={() => {
+          setIsOpen(false);
+          setSelectedPathIndex(null);
+        }}
+        variant="bottom"
+        hideBackdrop
+      >
         {selectedRegion ? (
-          <div>
-            <div className={styles.regionTitle}>{selectedRegion.name}</div>
-            <div className={styles.modalContent}>
-              <div className={styles.left}>
-                {selectedRegion.avatarUrl ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={selectedRegion.avatarUrl}
-                    alt={selectedRegion.managerName}
-                    className={styles.avatar}
-                  />
-                ) : (
-                  <div className={styles.avatar} />
-                )}
+          <div className={styles.modalContent}>
+            <div className={styles.left}>
+              {selectedRegion.avatarUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={selectedRegion.avatarUrl}
+                  alt={selectedRegion.managerName}
+                  className={styles.avatar}
+                />
+              ) : (
+                <div className={styles.avatar} />
+              )}
 
-                <div className={styles.manager}>
-                  <div className={styles.managerName}>
-                    {selectedRegion.managerName}
-                  </div>
-                  <div className={styles.phone}>{selectedRegion.phone}</div>
+              <div className={styles.manager}>
+                <div className={styles.managerName}>
+                  {selectedRegion.managerName}
                 </div>
+                <div className={styles.phone}>{selectedRegion.phone}</div>
               </div>
+            </div>
 
-              <div className={styles.right}>
-                <svg
-                  className={styles.pin}
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
-                </svg>
-                <span>{selectedRegion.city}</span>
-              </div>
+            <div className={styles.right}>
+              <svg
+                className={styles.pin}
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
+              </svg>
+              <span>{selectedRegion.city}</span>
             </div>
           </div>
         ) : (

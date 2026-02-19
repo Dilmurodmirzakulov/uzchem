@@ -53,71 +53,88 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 32px;
 }
 
 .left {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
 }
 
 .avatar {
-  width: 84px;
-  height: 84px;
+  width: 200px;
+  height: 200px;
   border-radius: var(--radius-full);
   object-fit: cover;
-  background-color: var(--color-light-bg);
+  background-color: #ffffff;
 }
 
 .manager {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .managerName {
-  font-weight: 600;
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.2;
 }
 
 .phone {
-  font-weight: 800;
-  font-size: 1.75rem;
-  color: var(--color-text-dark);
+  font-weight: 600;
+  font-size: 48px;
+  color: #000000;
   line-height: 1.1;
 }
 
 .right {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: var(--color-text-dark);
+  gap: 8px;
+  font-weight: 600;
+  font-size: 36px;
+  color: #000000;
 }
 
 .pin {
-  width: 18px;
-  height: 18px;
-  color: var(--color-text-dark);
-}
-
-.regionTitle {
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--color-text-dark);
-  margin-bottom: 10px;
+  width: 32px !important;
+  height: 32px !important;
+  color: #000000;
 }
 
 @media (max-width: 768px) {
   .modalContent {
     flex-direction: column;
     align-items: flex-start;
+    gap: 8px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .managerName {
+    font-size: 14px;
+    line-height: 1.2;
   }
 
   .phone {
-    font-size: 1.5rem;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .right {
+    margin-left: 96px;
+    font-size: 16px;
+    line-height: 1.1;
+  }
+
+  .pin {
+    width: 16px !important;
+    height: 16px !important;
   }
 }

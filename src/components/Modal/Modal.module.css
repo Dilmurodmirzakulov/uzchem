@@ -69,12 +69,15 @@
 /* --- Bottom variant (bottom sheet) --- */
 .bottom {
   align-self: flex-end;
-  width: calc(100% - 32px);
-  max-width: var(--container-max);
-  margin: 0 auto 16px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   max-height: 70vh;
   transform: translateY(100%);
-  border-radius: var(--radius-xl);
+  border-radius: 30px 30px 0 0;
+  background: rgba(239, 239, 239, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 
 .bottom.modalVisible {
@@ -121,6 +124,10 @@
   padding: 40px;
 }
 
+.bottom .content {
+  padding: 30px 32px;
+}
+
 .closeBtnPanel {
   width: 60px;
   height: 60px;
@@ -132,6 +139,26 @@
 
 .closeBtnPanel:hover {
   background-color: #02247b;
+  color: #ffffff;
+}
+
+.closeBtnBottom {
+  width: 36px;
+  height: 36px;
+  padding: 10px;
+  top: 16px;
+  right: 16px;
+  background-color: #61b405;
+  color: #ffffff;
+}
+
+.closeBtnBottom svg {
+  width: 16px;
+  height: 16px;
+}
+
+.closeBtnBottom:hover {
+  background-color: #61b405;
   color: #ffffff;
 }
 
@@ -159,9 +186,9 @@
     width: 100%;
     max-width: 100%;
     margin: 0;
-    height: 100vh;
-    max-height: 100vh;
-    border-radius: 0;
+    height: auto;
+    max-height: 220px;
+    border-radius: 20px 20px 0 0;
     transform: translateY(100%);
   }
 
@@ -188,6 +215,10 @@
     padding: 24px 16px;
   }
 
+  .bottom .content {
+    padding: 44px 20px 20px;
+  }
+
   .closeBtn {
     top: 12px;
     right: 12px;
@@ -198,5 +229,18 @@
     height: 48px;
     top: 12px;
     right: 12px;
+  }
+
+  .closeBtnBottom {
+    width: 32px;
+    height: 32px;
+    padding: 9px;
+    top: 16px;
+    right: 16px;
+  }
+
+  .closeBtnBottom svg {
+    width: 14px;
+    height: 14px;
   }
 }

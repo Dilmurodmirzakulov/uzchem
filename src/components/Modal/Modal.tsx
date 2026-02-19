@@ -7,6 +7,7 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   variant?: "side" | "fullscreen" | "bottom" | "panel";
+  hideBackdrop?: boolean;
   children: React.ReactNode;
 }
 
@@ -14,6 +15,7 @@ export default function Modal({
   isOpen,
   onClose,
   variant = "side",
+  hideBackdrop = false,
   children,
 }: ModalProps) {
   const [visible, setVisible] = useState(false);
@@ -99,11 +101,16 @@ export default function Modal({
           : styles.side;
 
   const overlayClass = variant === "panel" ? styles.overlayPanel : "";
-  const closeButtonClass = variant === "panel" ? styles.closeBtnPanel : "";
+  const closeButtonClass =
+    variant === "panel"
+      ? styles.closeBtnPanel
+      : variant === "bottom"
+        ? styles.closeBtnBottom
+        : "";
 
   return (
     <div
-      className={`${styles.overlay} ${overlayClass} ${animating ? styles.overlayVisible : ""}`}
+      className={`${styles.overlay} ${overlayClass} ${!hideBackdrop && animating ? styles.overlayVisible : ""}`}
       onClick={handleBackdropClick}
     >
       <div
