@@ -222,6 +222,7 @@ export default function UzbekistanMap() {
         }}
         variant="bottom"
         hideBackdrop
+        modalClassName={styles.regionDetailsModal}
       >
         {selectedRegion ? (
           <div className={styles.modalContent}>

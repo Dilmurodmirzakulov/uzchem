@@ -56,6 +56,10 @@
   gap: 32px;
 }
 
+.regionDetailsModal {
+  background: rgba(239, 239, 239, 0.92);
+}
+
 .left {
   display: flex;
   align-items: center;

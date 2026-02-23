@@ -8,6 +8,7 @@ interface ModalProps {
   onClose: () => void;
   variant?: "side" | "fullscreen" | "bottom" | "panel";
   hideBackdrop?: boolean;
+  modalClassName?: string;
   contentClassName?: string;
   closeButtonClassName?: string;
   hideCloseButton?: boolean;
@@ -19,6 +20,7 @@ export default function Modal({
   onClose,
   variant = "side",
   hideBackdrop = false,
+  modalClassName,
   contentClassName,
   closeButtonClassName,
   hideCloseButton = false,
@@ -121,7 +123,7 @@ export default function Modal({
     >
       <div
         className={`${styles.modal} ${variantClass} ${animating ? styles.modalVisible : ""
-          }`}
+          } ${modalClassName || ""}`.trim()}
       >
         {!hideCloseButton && (
           <button
