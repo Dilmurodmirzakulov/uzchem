@@ -79,7 +79,7 @@ export default function ProductDetailPage() {
   const [selectedWorkTypeIndex, setSelectedWorkTypeIndex] = useState<number | null>(null);
   const [similarSlide, setSimilarSlide] = useState(0);
 
-  const maxSimilarSlide = Math.max(0, similarProducts.length - 2);
+  const maxSimilarSlide = Math.max(0, similarProducts.length - 4);
 
   const tabs: { key: TabType; label: string }[] = [
     { key: "characteristics", label: t("characteristics") },

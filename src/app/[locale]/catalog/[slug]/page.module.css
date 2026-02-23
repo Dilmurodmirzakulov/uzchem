@@ -463,8 +463,7 @@
 
 .similarSliderViewport {
   --slide-gap: 20px;
-  --slide-peek: 24px;
-  --slide-card-width: calc((100% - var(--slide-gap) - var(--slide-peek)) / 2);
+  --slide-card-width: calc((100% - (var(--slide-gap) * 3)) / 4);
   overflow: hidden;
 }
 
@@ -593,7 +592,7 @@
   }
 
   .similarSliderViewport {
-    --slide-card-width: calc((100% - var(--slide-gap) - var(--slide-peek)) / 2);
+    --slide-card-width: calc((100% - (var(--slide-gap) * 3)) / 4);
   }
 
   .dropdownPlaceholder,

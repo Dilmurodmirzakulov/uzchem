@@ -26,40 +26,58 @@ const brands = [
 
 const products = [
   {
-    slug: "shpaklevka-1",
-    image: "/images/placeholder-product.svg",
+    slug: "knauf-rasler",
+    image: "/images/products/knauf-rasler.png",
     brand: "Knauf",
     title: "Шпаклевка цементно-полимерная финишная",
   },
   {
-    slug: "shpaklevka-2",
-    image: "/images/placeholder-product.svg",
-    brand: "Knauf",
-    title: "КНАУФ-Полимер Финиш шпаклевка полимерная финишная",
-  },
-  {
-    slug: "shpaklevka-3",
-    image: "/images/placeholder-product.svg",
-    brand: "Knauf",
-    title: "КНАУФ-Фуген шпаклевка гипсовая универсальная",
-  },
-  {
-    slug: "shpaklevka-4",
-    image: "/images/placeholder-product.svg",
+    slug: "knauf-fugen-hydro",
+    image: "/images/products/knauf-fugen-hydro-25kg.png",
     brand: "Knauf",
     title: "КНАУФ-Фуген Гидро шпаклевка гипсовая влагостойкая",
   },
   {
-    slug: "shpaklevka-5",
-    image: "/images/placeholder-product.svg",
+    slug: "knauf-polymer-finish",
+    image: "/images/products/knauf-polymer-finish-10kg.png",
     brand: "Knauf",
-    title: "КНАУФ-Унихард шпаклевка гипсовая высокопрочная",
+    title: "КНАУФ-Полимер Финиш шпаклевка полимерная финишная",
   },
   {
-    slug: "shpaklevka-6",
-    image: "/images/placeholder-product.svg",
+    slug: "knauf-unihard",
+    image: "/images/products/knauf-unihard-20kg.png",
+    brand: "Knauf",
+    title: "КНАУФ-Унихард шпаклевка гипсовая высокопрочная безусадочная",
+  },
+  {
+    slug: "knauf-fugen-universal",
+    image: "/images/products/knauf-fugen-universal-5kg.png",
+    brand: "Knauf",
+    title: "КНАУФ-Фуген шпаклевка гипсовая универсальная",
+  },
+  {
+    slug: "knauf-rotband-finish",
+    image: "/images/products/knauf-rotband-finish-25kg.png",
     brand: "Knauf",
     title: "КНАУФ-Ротбанд Финиш шпаклевка гипсовая финишная",
+  },
+  {
+    slug: "knauf-hp-finish",
+    image: "/images/products/knauf-hp-finish-25kg.png",
+    brand: "Knauf",
+    title: "Шпаклевка гипсовая Кнауф ХП Финиш",
+  },
+  {
+    slug: "knauf-multi-finish",
+    image: "/images/products/knauf-multi-finish-grey-25kg.png",
+    brand: "Knauf",
+    title: "Шпаклевка Кнауф Мульти-финиш",
+  },
+  {
+    slug: "knauf-rotband-pasta-profi",
+    image: "/images/products/knauf-rotband-pasta-profi.png",
+    brand: "Knauf",
+    title: "КНАУФ Ротбанд Паста Профи шпаклевка готовая",
   },
 ];
 
