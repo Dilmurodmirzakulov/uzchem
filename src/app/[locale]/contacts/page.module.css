@@ -1,120 +1,307 @@
+.heroDesktop {
+  position: relative;
+  height: 480px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.heroMobile {
+  display: none;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+
+.heroDarkOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 31.1%),
+    rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.heroGreenShape {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: min(53.5%, 1027px);
+  height: 100%;
+  background: #61b405;
+  clip-path: polygon(0 0, 78% 0, 100% 100%, 0 100%);
+  z-index: 2;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 48px;
+  color: #ffffff;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.heroBreadcrumbs {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.heroBreadcrumbMuted,
+.heroBreadcrumbDot {
+  opacity: 0.4;
+}
+
 .contactsSection {
-  background-color: var(--color-white);
+  background: #ffffff;
+  padding-top: 140px;
+  padding-bottom: 120px;
 }
 
 .contactCard {
-  display: flex;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-  max-width: 900px;
+  display: grid;
+  grid-template-columns: 480px minmax(0, 940px);
+  max-width: 1420px;
+  height: 600px;
   margin: 0 auto;
 }
 
-/* Contact Info */
 .contactInfo {
-  background-color: var(--color-light-bg);
-  padding: 40px;
-  flex: 0 0 40%;
+  background: #02247b;
+  padding: 48px 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .officeTitle {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--color-text-dark);
+  margin: 0;
+  font-size: 48px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .address {
-  font-size: 0.9375rem;
-  color: var(--color-text-body);
-  line-height: 1.6;
+  margin: 24px 0 0;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #ffffff;
 }
 
 .socialIcons {
   display: flex;
   gap: 10px;
+  margin-top: 18px;
 }
 
 .socialIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 40px;
   height: 40px;
-  border-radius: var(--radius-full);
-  background-color: var(--color-navy);
-  color: var(--color-white);
-  transition: background-color var(--transition-fast);
-}
-
-.socialIcon:hover {
-  background-color: var(--color-green);
-  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
 }
 
 .phones {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid #0e3597;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: auto;
+  gap: 14px;
 }
 
 .phone {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-text-dark);
+  font-size: 42px;
+  line-height: 1.05;
+  font-weight: 600;
+  color: #ffffff;
   text-decoration: none;
-  line-height: 1.3;
 }
 
-.phone:hover {
-  color: var(--color-green);
+.phonePrefix {
+  color: #61b405;
 }
 
-/* Map */
 .mapWrapper {
-  flex: 1;
-  min-height: 400px;
+  position: relative;
+  overflow: hidden;
 }
 
-.mapPlaceholder {
+.mapImage {
   width: 100%;
   height: 100%;
-  background-color: #e8e8e8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
 }
 
-.mapInner {
-  text-align: center;
-  color: var(--color-text-muted);
+.mapPin {
+  position: absolute;
+  left: 58%;
+  top: 47%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
 }
 
-.mapInner p {
-  margin-top: 8px;
-  font-size: 0.875rem;
+.mapPinDot {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(2, 36, 123, 0.12);
 }
 
-/* Responsive */
+.mapPinIcon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #02247b;
+}
+
+.mapCover {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .contactCard {
+  .heroDesktop {
+    display: none;
+  }
+
+  .heroMobile {
+    display: block;
+  }
+
+  .heroMobileTop {
+    height: 250px;
+    background: #61b405;
+  }
+
+  .heroMobileContent {
+    height: 250px;
+    display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 34px;
+  }
+
+  .heroMobileTitle {
+    margin: 0;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .heroMobileBreadcrumbs {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .heroMobileBreadcrumbMuted,
+  .heroMobileBreadcrumbDot {
+    opacity: 0.4;
+  }
+
+  .heroMobileImageWrap {
+    position: relative;
+    width: 100%;
+    height: 250px;
+  }
+
+  .heroMobileImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .contactsSection {
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .contactCard {
+    grid-template-columns: 1fr;
+    height: auto;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
   }
 
   .contactInfo {
-    flex: auto;
-    padding: 30px 24px;
+    height: 436px;
+    padding: 60px 20px 32px;
   }
 
-  .mapWrapper {
-    min-height: 300px;
+  .officeTitle {
+    font-size: 48px;
+    line-height: 1;
+  }
+
+  .address {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+
+  .socialIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .phones {
+    margin-top: auto;
+    padding-top: 22px;
+    gap: 12px;
   }
 
   .phone {
-    font-size: 1.25rem;
+    font-size: 38px;
+    line-height: 1;
+  }
+
+  .phonePrefix {
+    color: #ffffff;
+  }
+
+  .mapWrapper {
+    height: 400px;
+  }
+
+  .mapPin {
+    left: 47%;
+    top: 44%;
+  }
+
+  .mapPinDot {
+    background: rgba(2, 36, 123, 0.16);
   }
 }

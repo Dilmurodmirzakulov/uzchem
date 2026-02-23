@@ -10,13 +10,19 @@ interface ProductCardProps {
   image: string;
   brand: string;
   title: string;
+  mobileView?: "one" | "two";
 }
 
-export default function ProductCard({ slug, image, brand, title }: ProductCardProps) {
+export default function ProductCard({ slug, image, brand, title, mobileView }: ProductCardProps) {
   const t = useTranslations("common");
+  const mobileViewClass = mobileView === "one"
+    ? styles.mobileOne
+    : mobileView === "two"
+      ? styles.mobileTwo
+      : "";
 
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${mobileViewClass}`.trim()}>
       <div className={styles.imageWrapper}>
         <Image
           src={image}

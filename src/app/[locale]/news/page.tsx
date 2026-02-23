@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import PageBanner from "@/components/PageBanner/PageBanner";
 import NewsCard from "@/components/NewsCard/NewsCard";
 import Modal from "@/components/Modal/Modal";
 import styles from "./page.module.css";
@@ -12,42 +11,77 @@ interface NewsItem {
   slug: string;
   image: string;
   title: string;
-  date: string;
-  content: string;
+  sections: {
+    heading: string;
+    paragraphs: string[];
+  }[];
 }
 
 const newsItems: NewsItem[] = [
   {
     slug: "kak-vybrat-vannu",
-    image: "/images/placeholder-news.svg",
+    image: "/images/news/news-detail-1.jpg",
     title: "Как выбрать ванну",
-    date: "15 января 2025",
-    content:
-      "При выборе ванны необходимо учитывать множество факторов: размер помещения, материал изготовления, тип установки и бюджет. В этой статье мы рассмотрим основные критерии выбора и поможем определиться с оптимальным вариантом.",
+    sections: [
+      {
+        heading: "Разновидности ванн",
+        paragraphs: [
+          "Богатый ассортимент форм, размеров и материалов позволяет с легкостью подобрать вариант, который сможет полностью удовлетворить требованиям и вписаться в оформление ванной комнаты любого размера. Сегодня предлагаются ванны с дополнительно установленными специальными опциями, которые позволяет существенно повысить функциональность сантехнического оборудования.",
+          "Для изготовления ванн используются различные материалы: натуральный камень, стекло, полимеры, чугун, сталь и даже натуральное дерево.",
+          "Рассмотрим самые популярные варианты ванн.",
+        ],
+      },
+      {
+        heading: "Чугунные ванны: особенности и преимущества",
+        paragraphs: [
+          "Чаще всего ванны производятся из чугуна. Связанно это с его неоспоримыми преимуществами: прочность и стойкость к нагрузкам, хорошая теплоемкость, отсутствие звона при падении капель воды.",
+          "Старые привычные чугунные ванны имели стандартные размеры и овальную форму. Современное производство позволяет выполнять эти ванны более оригинальных форм, например, асимметричной. Основное преимущество таких ванн в том, что для их установки не требуется много пространства, занимается только угол помещения.",
+          "Асимметричные чугунные ванны способны стать достойным украшением и функциональным дополнением для ванных комнат любых размеров. При выборе и покупке чугунной ванны особое внимание следует уделить качеству поверхности и ее оттенку.",
+        ],
+      },
+    ],
   },
   {
     slug: "kak-vybrat-podlozhku-pod-laminat",
-    image: "/images/placeholder-news.svg",
+    image: "/images/news/news-1.jpg",
     title: "Как выбрать подложку под ламинат",
-    date: "10 января 2025",
-    content:
-      "Правильный выбор подложки под ламинат — залог долговечности напольного покрытия. Рассказываем, на что обратить внимание при выборе.",
+    sections: [
+      {
+        heading: "Как выбрать подложку",
+        paragraphs: [
+          "Правильный выбор подложки под ламинат — залог долговечности напольного покрытия.",
+          "Подложка снижает шум, компенсирует неровности и улучшает теплоизоляцию.",
+        ],
+      },
+    ],
   },
   {
     slug: "kak-rasschitat-laminat",
-    image: "/images/placeholder-news.svg",
+    image: "/images/news/news-1.jpg",
     title: "Как рассчитать количество ламината на комнату",
-    date: "5 января 2025",
-    content:
-      "Правильный расчёт количества ламината поможет избежать лишних затрат. В этой статье мы расскажем, как точно рассчитать нужное количество.",
+    sections: [
+      {
+        heading: "Расчет количества ламината",
+        paragraphs: [
+          "Правильный расчет помогает избежать лишних затрат и нехватки материала.",
+          "Учитывайте площадь комнаты, запас на подрезку и схему укладки.",
+        ],
+      },
+    ],
   },
   {
     slug: "kak-vyrovnyat-pol",
-    image: "/images/placeholder-news.svg",
+    image: "/images/news/news-1.jpg",
     title: "Как выровнять пол под ламинат",
-    date: "28 декабря 2024",
-    content:
-      "Ровное основание — обязательное условие для укладки ламината. Рассмотрим основные способы выравнивания пола.",
+    sections: [
+      {
+        heading: "Подготовка основания",
+        paragraphs: [
+          "Ровное основание — обязательное условие для укладки ламината.",
+          "Перед монтажом проверьте перепады высот и подберите подходящий способ выравнивания.",
+        ],
+      },
+    ],
   },
 ];
 
@@ -58,19 +92,57 @@ export default function NewsPage() {
 
   return (
     <>
-      <PageBanner
-        title={t("title")}
-        breadcrumbs={[
-          { label: tc("home"), href: "/" },
-          { label: t("title") },
-        ]}
-      />
-
-      <section className={`section ${styles.newsSection}`}>
+      <section className={styles.heroDesktop}>
+        <Image
+          src="/images/news/news-hero.jpg"
+          alt={t("title")}
+          fill
+          priority
+          className={styles.heroImage}
+        />
+        <div className={styles.heroDarkOverlay} />
+        <div className={styles.heroGreenShape} />
         <div className="container">
-          <div className="row g-4">
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>{t("title")}</h1>
+            <div className={styles.heroBreadcrumbs}>
+              <span className={styles.heroBreadcrumbMuted}>{tc("home")}</span>
+              <span className={styles.heroBreadcrumbDot}>•</span>
+              <span>{t("title")}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.heroMobile}>
+        <div className={styles.heroMobileTop}>
+          <div className="container">
+            <div className={styles.heroMobileContent}>
+              <h1 className={styles.heroMobileTitle}>{t("title")}</h1>
+              <div className={styles.heroMobileBreadcrumbs}>
+                <span className={styles.heroMobileBreadcrumbMuted}>{tc("home")}</span>
+                <span className={styles.heroMobileBreadcrumbDot}>•</span>
+                <span>{t("title")}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={styles.heroMobileImageWrap}>
+          <Image
+            src="/images/news/news-hero.jpg"
+            alt={t("title")}
+            fill
+            priority
+            className={styles.heroMobileImage}
+          />
+        </div>
+      </section>
+
+      <section className={styles.newsSection}>
+        <div className="container">
+          <div className={styles.newsGrid}>
             {newsItems.map((item) => (
-              <div key={item.slug} className="col-md-6">
+              <div key={item.slug} className={styles.newsItem}>
                 <NewsCard
                   image={item.image}
                   title={item.title}
@@ -86,22 +158,33 @@ export default function NewsPage() {
       <Modal
         isOpen={!!selectedNews}
         onClose={() => setSelectedNews(null)}
-        variant="side"
+        variant="panel"
+        contentClassName={styles.newsModalContentShell}
+        closeButtonClassName={styles.newsModalCloseBtn}
       >
         {selectedNews && (
           <div className={styles.modalContent}>
-            <div className={styles.modalImage}>
-              <Image
-                src={selectedNews.image}
-                alt={selectedNews.title}
-                width={460}
-                height={280}
-                className={styles.modalImg}
-              />
+            <div className={styles.modalScrollArea}>
+              <div className={styles.modalImage}>
+                <Image
+                  src={selectedNews.image}
+                  alt={selectedNews.title}
+                  fill
+                  className={styles.modalImg}
+                />
+              </div>
+
+              {selectedNews.sections.map((section) => (
+                <section className={styles.modalSection} key={section.heading}>
+                  <h2 className={styles.modalSectionTitle}>{section.heading}</h2>
+                  <div className={styles.modalSectionText}>
+                    {section.paragraphs.map((paragraph, idx) => (
+                      <p key={idx}>{paragraph}</p>
+                    ))}
+                  </div>
+                </section>
+              ))}
             </div>
-            <time className={styles.modalDate}>{selectedNews.date}</time>
-            <h2 className={styles.modalTitle}>{selectedNews.title}</h2>
-            <p className={styles.modalText}>{selectedNews.content}</p>
           </div>
         )}
       </Modal>

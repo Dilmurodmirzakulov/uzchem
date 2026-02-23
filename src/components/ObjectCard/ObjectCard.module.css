@@ -1,63 +1,78 @@
 .card {
   display: block;
   text-decoration: none;
-  border-radius: var(--radius-lg);
+  border-radius: 30px;
   overflow: hidden;
-  transition: transform var(--transition-normal);
   cursor: pointer;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-}
-
-.card:hover .image {
-  transform: scale(1.05);
 }
 
 .imageWrapper {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 7 / 4;
   overflow: hidden;
-  border-radius: var(--radius-lg);
+  border-radius: 30px;
 }
 
 .image {
   object-fit: cover;
-  transition: transform var(--transition-normal);
+  object-position: center;
 }
 
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 56.25%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 
 .plusIcon {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 36px;
-  height: 36px;
-  background-color: var(--color-green);
-  border-radius: var(--radius-full);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: #61b405;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color var(--transition-fast);
-}
-
-.card:hover .plusIcon {
-  background-color: var(--color-green-hover);
 }
 
 .title {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
-  color: var(--color-white);
-  font-size: 1rem;
+  bottom: 20px;
+  left: 20px;
+  color: #ffffff;
+  font-size: 24px;
   font-weight: 600;
   margin: 0;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .card,
+  .imageWrapper {
+    border-radius: 20px;
+  }
+
+  .imageWrapper {
+    aspect-ratio: auto;
+    height: 170px;
+  }
+
+  .plusIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .title {
+    left: 10px;
+    bottom: 10px;
+    font-size: 12px;
+  }
 }

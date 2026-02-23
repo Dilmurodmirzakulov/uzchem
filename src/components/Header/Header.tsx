@@ -15,6 +15,10 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   const isHomePage = pathname === "/" || pathname === "";
+  const isObjectsPage = pathname === "/objects";
+  const isNewsPage = pathname === "/news";
+  const isContactsPage = pathname === "/contacts";
+  const isHeroPage = isHomePage || isObjectsPage || isNewsPage || isContactsPage;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,8 +29,8 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isTransparent = isHomePage && !scrolled && !mobileMenuOpen;
-  const isMobileTopState = isHomePage && !scrolled && !mobileMenuOpen;
+  const isTransparent = isHeroPage && !scrolled && !mobileMenuOpen;
+  const isMobileTopState = isHeroPage && !scrolled && !mobileMenuOpen;
 
   const navLinks = [
     { href: "/news" as const, label: t("news") },
@@ -262,7 +266,7 @@ export default function Header() {
           )}
         </div>
       </header>
-      {!isHomePage && <div className={styles.headerSpacer} />}
+      {!isHeroPage && <div className={styles.headerSpacer} />}
     </>
   );
 }

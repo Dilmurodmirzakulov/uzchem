@@ -8,6 +8,9 @@ interface ModalProps {
   onClose: () => void;
   variant?: "side" | "fullscreen" | "bottom" | "panel";
   hideBackdrop?: boolean;
+  contentClassName?: string;
+  closeButtonClassName?: string;
+  hideCloseButton?: boolean;
   children: React.ReactNode;
 }
 
@@ -16,6 +19,9 @@ export default function Modal({
   onClose,
   variant = "side",
   hideBackdrop = false,
+  contentClassName,
+  closeButtonClassName,
+  hideCloseButton = false,
   children,
 }: ModalProps) {
   const [visible, setVisible] = useState(false);
@@ -117,25 +123,27 @@ export default function Modal({
         className={`${styles.modal} ${variantClass} ${animating ? styles.modalVisible : ""
           }`}
       >
-        <button
-          className={`${styles.closeBtn} ${closeButtonClass}`}
-          onClick={onClose}
-          aria-label="Close"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
+        {!hideCloseButton && (
+          <button
+            className={`${styles.closeBtn} ${closeButtonClass} ${closeButtonClassName || ""}`.trim()}
+            onClick={onClose}
+            aria-label="Close"
           >
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-        <div className={styles.content}>{children}</div>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        )}
+        <div className={`${styles.content} ${contentClassName || ""}`.trim()}>{children}</div>
       </div>
     </div>
   );
