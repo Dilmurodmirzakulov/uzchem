@@ -41,6 +41,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color var(--transition-fast);
+}
+
+.card:hover .plusIcon {
+  background-color: #02247b;
 }
 
 .title {

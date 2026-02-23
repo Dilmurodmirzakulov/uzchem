@@ -75,16 +75,16 @@
 }
 
 .catalogBtn:hover {
-  /* border-color: var(--color-green); */
-  background-color: var(--header-catalog-bg);
-  color: var(--header-catalog-fg);
+  border-color: #61b405;
+  background-color: #61b405;
+  color: #ffffff;
 }
 
 .headerTransparent .catalogBtn:hover {
-  /* border-color: var(--color-green); */
-  background-color: var(--header-catalog-bg);
-  opacity: 0.75;
-  color: var(--header-catalog-fg);
+  border-color: #61b405;
+  background-color: #61b405;
+  opacity: 1;
+  color: #ffffff;
 }
 
 .catalogIcon {

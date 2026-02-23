@@ -115,8 +115,13 @@
   padding: 0;
   position: absolute;
   transform: translateX(-50%);
+  transition: background-color var(--transition-fast);
   width: 50px;
   z-index: 2;
+}
+
+.plusButton:hover {
+  background-color: #61b405;
 }
 
 .modalContent {

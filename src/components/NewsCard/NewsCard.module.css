@@ -29,6 +29,11 @@
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(10px);
+  transition: background-color var(--transition-fast);
+}
+
+.card:hover .plusIcon {
+  background-color: #02247b;
 }
 
 .title {
